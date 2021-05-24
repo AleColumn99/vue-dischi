@@ -2,13 +2,15 @@
 
   <div id="app">
 
+    <Header />
+
     <div v-if="!loading" class="container text-center mt-5">
   
       <div class="wrap d-flex justify-content-center align-items-center" >
 
         <Card
-          v-for="card in cards"
-          :key="card.id"
+          v-for="(card, index) in cards"
+          :key="index"
           :card="card"
         />
         
@@ -27,12 +29,14 @@
 import axios from 'axios';
 import Card from '@/components/Card';
 import Loading from '@/components/Loading';
+import Header from '@/components/Header';
 
 export default {
   name: 'App',
   components: {
     Card,
-    Loading
+    Loading,
+    Header
   },
   data() {
     return {
@@ -43,13 +47,14 @@ export default {
   },
   created() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-    .then( res => {
-      console.log(res.data);
-      this.loading = false;
-    })
-    .catch( err => {
-      console.log(err);
-    })
+      .then(res => {
+        this.cards = res.data;
+        this.loading = false;
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 }
 
@@ -58,5 +63,7 @@ export default {
 <style lang="scss">
 
 @import '@/assets/style/general';
+
+
 
 </style>
