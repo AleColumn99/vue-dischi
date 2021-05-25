@@ -1,7 +1,25 @@
 <template>
 
-  <div class="header">
+  <div class="header d-flex">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Spotify.png" alt="spotify-logo">
+    <!-- <div class="slider-menu">
+      <div class="menu-voice">
+        <h3>
+          Genres
+        </h3>
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li
+            v-for="(card, index) in cards"
+            :key="index"
+            :genre="card.genre"
+          >
+            {{ card.genre }}
+          </li>
+        </ul>
+      </div>
+    </div> -->
   </div>
   
 </template>

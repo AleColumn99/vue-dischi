@@ -1,12 +1,12 @@
 <template>
 
-  <div class="wrapper col-sm-6 col-md-4 col-lg-3 mb-5">
+  <div class="wrapper col-sm-6 col-md-3 col-lg-2 mb-5">
     <img :src="card.poster" alt="card.title">
-    <h3>{{ card.title }}</h3>
-    <h5>{{ card.author }}</h5>
-    <h5>{{ card.year }}</h5>
+    <h5>{{ card.title }}</h5>
+    <p>{{ card.author }}</p>
+    <p>{{ card.year }}</p>
   </div>
-  
+ 
 </template>
 
 <script>
@@ -21,16 +21,23 @@ export default {
 <style lang="scss" scoped>
 
  .wrapper {
-   width: 300px;
-   margin: 20px;
-   padding: 20px;
+   min-width: 250px;
+   min-height: 400px;
+   margin: 10px;
    background-color: #2E3A46;
    img {
-     width: 260px;
-     height: 260px;
+     margin: 20px;
+     width: 200px;
+     height: 200px;
    }
-   h3 {
+   h5 {
+     min-height: 60px;
+     margin: 10px;
+     color: #FFFFFF;
      text-transform: uppercase;
+   }
+   p {
+     color: #797E7F;
    }
  }
 

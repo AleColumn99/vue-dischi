@@ -1,8 +1,14 @@
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap'; 
 
 /* @import '@fontsource/montserrat.css';
 
 @import './vars'; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   /* font-family: $main-fonts; */
